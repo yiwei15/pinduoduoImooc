@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '拼多多';
+  tabs = ['热门', '男装', '手机'];
 }
