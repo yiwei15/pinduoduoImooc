@@ -11,7 +11,7 @@ interface TopMenu {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '拼多多';
+  selectedIndex = -1;
   menus: TopMenu[] = [
     {
       title: '热门',
