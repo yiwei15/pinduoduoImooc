@@ -1,8 +1,12 @@
+<!--通过 ngIf 决定是否使用该组件，在条件为否时，触发了该组件的 OnDestroy -->
 <app-scrollable-tab
   [menus]="topMenus"
-  backgroundColor="red"
+  [backgroundColor]="scrollableTabBgColor"
   titleColor="#fff"
   tilteActiveColor="yellow"
   indicatorColor="yellow"
   (tabSelected)="handleTabSelected($event)"
-></app-scrollable-tab>
+  *ngIf="scrollableTabBgColor === 'red'"
+>
+  <div>Hello</div>
+</app-scrollable-tab>
