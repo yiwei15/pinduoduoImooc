@@ -1,18 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  Output,
-  EventEmitter,
-  SimpleChanges,
-  OnChanges,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnDestroy
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export interface TopMenu {
   title: string;
@@ -30,15 +16,7 @@ export interface TopMenu {
  * 但建议实现接口，好处一个是不会由于误删除某个钩子函数
  * 另一个是对组件涉及到哪些生命周期一目了然
  */
-export class ScrollableTabComponent
-  implements
-    OnInit,
-    OnChanges,
-    AfterContentInit,
-    AfterContentChecked,
-    AfterViewInit,
-    AfterViewChecked,
-    OnDestroy {
+export class ScrollableTabComponent {
   selectedIndex = -1;
   @Input() menus: TopMenu[] = [];
   @Input() backgroundColor = '#fff';
@@ -53,50 +31,6 @@ export class ScrollableTabComponent
    */
   constructor() {
     console.log('构造函数');
-  }
-
-  /**
-   * 组件的 `@Input` 属性变化时调用
-   * @param changes 一个索引对象，用以体现变化之前和当前的值
-   */
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('输入变化', changes);
-  }
-  /**
-   * 组件初始化，这个钩子函数中，可以安全的使用组件中的属性和方法
-   */
-  ngOnInit(): void {
-    console.log('组件初始化');
-  }
-  /**
-   * 组件中嵌套的 `<ng-content>` 的内容初始化完成
-   */
-  ngAfterContentInit(): void {
-    console.log('内容初始化');
-  }
-  /**
-   * 组件中嵌套的 `<ng-content>` 的内容的变化脏值检查
-   */
-  ngAfterContentChecked(): void {
-    console.log('内容脏值检查');
-  }
-  /**
-   * 组件视图渲染完成，可以安全的操作视图中的元素
-   */
-  ngAfterViewInit(): void {
-    console.log('视图初始化');
-  }
-  /**
-   * 组件视图的脏值检查
-   */
-  ngAfterViewChecked(): void {
-    console.log('视图脏值检查');
-  }
-  /**
-   * 组件销毁时调用，一般发生在父组件 ngIf 或路由变化时
-   */
-  ngOnDestroy(): void {
-    console.log('组件销毁');
   }
 
   handleSelection(index: number) {
