@@ -1,6 +1,8 @@
 ul {
   padding: 0;
   margin: 0;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   justify-content: space-between;
 }
@@ -23,10 +25,4 @@ a {
   height: 2px;
   width: 2rem;
   margin-top: 2px;
-}
-.even {
-  font-weight: 900;
-}
-.odd {
-  font-weight: 100;
 }
