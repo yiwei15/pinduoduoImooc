@@ -7,16 +7,12 @@ import {
   ScrollableTabComponent,
   ImageSliderComponent,
   HorizontalGridComponent
-} from './components';
+} from './shared/components';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ScrollableTabComponent,
-    ImageSliderComponent,
-    HorizontalGridComponent
-  ],
-  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent]
 })
