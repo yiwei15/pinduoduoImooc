@@ -1,3 +1,7 @@
-input {
-  border: 1px dashed black;
+.hello {
+  background-color: red;
+}
+:host {
+  display: flex;
+  overflow-x: auto;
 }
