@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostBinding } from '@angular/core';
 
 /**
  * 指令可以理解为没有模版的组件，它需要一个宿主元素。
@@ -8,15 +8,12 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
   selector: '[appGridItem]'
 })
 export class GridItemDirective {
-  constructor(private elr: ElementRef, private renderer: Renderer2) {
-    this.setStyle('display', 'grid');
-    // 给出网格的模版，默认情况下是一个堆叠的布局，给出一个网格的两个构成部分的命名: image 和 title
-    this.setStyle('grid-template-areas', `'image' 'title'`);
-    this.setStyle('place-items', 'center');
-    this.setStyle('width', '4.3rem');
-  }
-
-  private setStyle(styleName: string, styleValue: string | number) {
-    this.renderer.setStyle(this.elr.nativeElement, styleName, styleValue);
-  }
+  /**
+   * HostBinding 绑定宿主元素的样式或属性
+   * 可以绑定的有 style.xxx 或者 class.xxx 或者 attr.xxx
+   */
+  @HostBinding('style.display') display = 'grid';
+  @HostBinding('style.grid-template-areas') template = `'image' 'title'`;
+  @HostBinding('style.place-items') align = 'center';
+  @HostBinding('style.width') width = '4rem';
 }
