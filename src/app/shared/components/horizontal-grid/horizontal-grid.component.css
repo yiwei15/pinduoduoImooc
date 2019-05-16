@@ -1,4 +1,4 @@
 :host {
   display: flex;
-  overflow-x: auto;
+  justify-content: center;
 }
