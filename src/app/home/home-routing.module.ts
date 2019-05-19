@@ -34,7 +34,10 @@ const routes: Routes = [
         component: HomeDetailComponent,
         children: [
           {
-            path: 'grand',
+            /**
+             * 孙路由，同样可以使用路径参数
+             */
+            path: ':name',
             component: HomeGrandChildComponent
           }
         ]

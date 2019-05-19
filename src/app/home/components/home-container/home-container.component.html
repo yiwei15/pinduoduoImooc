@@ -8,5 +8,10 @@
 >
 </app-scrollable-tab>
 <router-outlet></router-outlet>
+<a
+  [routerLink]="['hot', 'grand']"
+  [queryParams]="{ name: 'zhangsan', gender: 'male', debug: true }"
+  >linkToGrand</a
+>
 <a [routerLink]="[{ outlets: { second: ['aux'] } }]">显示 aux</a>
 <router-outlet name="second"></router-outlet>
