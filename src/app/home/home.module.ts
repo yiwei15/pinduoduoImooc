@@ -5,7 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import {
   HomeContainerComponent,
   HomeDetailComponent,
-  HomeGrandChildComponent,
+  HomeGrandComponent,
   HomeAuxComponent
 } from './components';
 
@@ -13,7 +13,7 @@ import {
   declarations: [
     HomeContainerComponent,
     HomeDetailComponent,
-    HomeGrandChildComponent,
+    HomeGrandComponent,
     HomeAuxComponent
   ],
   imports: [SharedModule, HomeRoutingModule]

@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
+  selectedTabLink;
   imageSliders: ImageSlider[] = [
     {
       imgUrl:
@@ -156,7 +157,12 @@ export class HomeDetailComponent implements OnInit {
     }
   ];
   ngOnInit() {
-    this.route.paramMap.subscribe(params => console.log('params: ', params));
-    this.route.queryParamMap.subscribe(qp => console.log('query params:', qp));
+    this.route.paramMap.subscribe(params => {
+      console.log('路径参数: ', params);
+      this.selectedTabLink = params.get('tabLink');
+    });
+    this.route.queryParamMap.subscribe(params => {
+      console.log('查询参数', params);
+    });
   }
 }

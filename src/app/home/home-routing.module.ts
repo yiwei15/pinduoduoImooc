@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   HomeContainerComponent,
   HomeDetailComponent,
-  HomeGrandChildComponent,
+  HomeGrandComponent,
   HomeAuxComponent
 } from './components';
 
@@ -13,15 +13,10 @@ const routes: Routes = [
     component: HomeContainerComponent,
     children: [
       {
-        path: 'aux',
-        component: HomeAuxComponent,
-        outlet: 'second'
-      },
-      /**
-       * 路由节点可以没有 component
-       * 一般用于重定向到一个默认子路由
-       */
-      {
+        /**
+         * 路由节点可以没有 component
+         * 一般用于重定向到一个默认子路由
+         */
         path: '',
         redirectTo: 'hot',
         pathMatch: 'full'
@@ -34,11 +29,13 @@ const routes: Routes = [
         component: HomeDetailComponent,
         children: [
           {
-            /**
-             * 孙路由，同样可以使用路径参数
-             */
-            path: ':name',
-            component: HomeGrandChildComponent
+            path: 'aux',
+            component: HomeAuxComponent,
+            outlet: 'second'
+          },
+          {
+            path: 'grand',
+            component: HomeGrandComponent
           }
         ]
       }
