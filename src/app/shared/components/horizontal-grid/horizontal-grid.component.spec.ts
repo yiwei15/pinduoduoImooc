@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HorizontalGridComponent } from './horizontal-grid.component';
 
@@ -6,7 +6,7 @@ describe('HorizontalGridComponent', () => {
   let component: HorizontalGridComponent;
   let fixture: ComponentFixture<HorizontalGridComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HorizontalGridComponent ]
     })
